@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <% flights.forEach(fl=>{ %>
+                <div><%= fl.name %></div>
+            <% }) %>
+        </div>
+        <div class="col-6">
+            <form action="/flights/create" method="POST">
+                <div class="row">
+                    <label>Name of Flight</label>
+                    <input name="name" class="form-control">
+                    <label>Which Airport is this flight from?</label>
+                    <input name="from" class="form-control">
+                    <label>Which Airport is this flight going to?</label>
+                    <input name="to" class="form-control">
+                    <label>What airlines?</label>
+                    <input name="airline" class="form-control">
+                    <%#<label>How many passengers?</label>%>
+                    <%#<input name="passenger" class="form-control">%>
+                </div>
+                <div class="row">
+                    <button class="btn" type="submit">Add Flight</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <form action="/" method="get">
+        <input name="IDK"><button>Find Fei Ji Chang</button>
+    </form>
+    <div class="row">
+        <% airports.forEach(ap=>{%>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <p><%= ap.name %></p>
+                        <p><%= ap.country %></p>
+                        <p><%= ap.opened %></p>
+                        <% ap.terminal.forEach(tr=>{%>
+                            <p><%= tr.name%></p>
+                            <p><%= tr.capacity%></p>
+                            <% tr.flights.forEach(fl=>{%>
+                                <p><%= fl.name%></p>
+                                <p><%= fl.airline%></p>
+                            <%})%>
+                        <%})%>
+                       
+                    </div>
+                </div>
+            </div>
+        <%})%>
+    </div>
+</div>

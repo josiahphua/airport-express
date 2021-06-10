@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="col-8">
+
+   
+        <form action="/create" method="post">
+            <div class="row">
+                <label>Airport Name La Bro</label>
+                <input type="text" name="name">
+            </div>
+            <div class="row">
+                <label>Country Brother</label>
+                <input type="text" name="country">
+            </div>
+            <div class="row">
+                <label>When open one?</label>
+                <input type="text" name="opened">
+            </div>
+            <div class="row">
+                <label>Terminal where?</label>
+                <% terminals.forEach(tr=>{%>
+                    <div><input type="checkbox" name="terminal" value="<%= tr._id %>"><%= tr.name %></div>
+                <%})%>
+            </div>
+            <div class="row">
+                <button class="btn" type="submit">Add FEI JI CHANG</button>
+            </div>
+        </form>
+    </div>
+</div>

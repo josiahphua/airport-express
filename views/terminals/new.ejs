@@ -1,0 +1,36 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <% terminals.forEach(tr=>{ %>
+                <div><%= tr.name %></div>
+            <% }) %>
+        </div>
+        <div class="col-6">
+            <form action="/terminals/create" method="post">
+                <div class="row">
+                    <label>Terminal name</label>
+                    <input type="text" name="name">
+    
+                </div>
+                <div class="row">
+                    <label>Capacity</label>
+                    <input type="number" name="capacity">
+    
+                </div>
+                <div class="row">
+                    <label>Flights</label>
+                    <% flights.forEach(fl=>{%>
+                        <div><input type="checkbox" name="flights" value="<%= fl._id %>"><%= fl.name %></div>
+                    <%})%>
+    
+                </div>
+                <div class=“row”>
+                    <button class=“btn” type=“submit”>Add Terminal</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
